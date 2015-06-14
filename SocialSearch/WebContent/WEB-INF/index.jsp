@@ -18,9 +18,9 @@
     <h1>Real Time Social Search</h1>
     <p>Enter the keyword to search over different social media!</p><br/>
     
-    <form class="form-inline" role="form">
+    <form class="form-inline" action = "/SocialSearch/" method = "post">
     <div class="form-group">          
-      <input type="text" class="form-control input-lg" style="width: 600px;" id="usr" placeholder="Enter search keyword">      
+      <input type="text" class="form-control input-lg" style="width: 600px;" id="usr" name="searchKeyword" placeholder="Enter search keyword">      
     </div>&nbsp;
     <button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-search"></span> Search</button>
     </form>
@@ -38,10 +38,19 @@
     </div>
     <div class="col-sm-4 well ">
       <h3>Twitter</h3>
-      <c:forEach items="${twitter}" var="festival">  
-      	<hr style=" border:none; border-top:1px dotted #f00; color:#fff; background-color:#fff; height:1px; width:100%;">     
-        <p>${festival.getText()}</p>         		
-  </c:forEach>
+      <c:choose>
+		  <c:when test="${twitter == null}">
+		    ...
+		  </c:when>	
+		  <c:otherwise>
+		     <c:forEach items="${twitter}" var="festival">  
+	      		<hr style=" border:none; border-top:1px dotted #f00; color:#fff; background-color:#fff; height:1px; width:100%;">     
+	        	<p>${festival.getText()}</p>         		
+	  		</c:forEach>
+		  </c:otherwise>
+		</c:choose>
+      
+     
       
     </div>
     <div class="col-sm-4 well ">
