@@ -30,33 +30,48 @@
 
     
   <div class="row">
-    <div class="col-sm-4 well">
-    <span class="social social-facebook"></span>
-      <h3>Facebook</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4 well ">
+      <div class="col-sm-4 well ">
       <h3>Twitter</h3>
       <c:choose>
 		  <c:when test="${twitter == null}">
-		    ...
+		    See the results from twitter for the searched keyword here.
 		  </c:when>	
 		  <c:otherwise>
-		     <c:forEach items="${twitter}" var="festival">  
+		     <c:forEach items="${twitter}" var="update">  
 	      		<hr style=" border:none; border-top:1px dotted #f00; color:#fff; background-color:#fff; height:1px; width:100%;">     
-	        	<p>${festival.getText()}</p>         		
+	        	<p>${update.getText()}</p>         		
+	  		</c:forEach>
+		  </c:otherwise>
+		</c:choose>               
+    </div>
+    <div class="col-sm-4 well">
+    <span class="social social-facebook"></span>
+      <h3>Facebook</h3>  
+ 		<c:choose>
+		  <c:when test="${facebook == null}">
+		    See the results from facebook for the searched keyword here.
+		  </c:when>	
+		  <c:otherwise>
+		     <c:forEach items="${facebook}" var="update">  
+	      		<hr style=" border:none; border-top:1px dotted #f00; color:#fff; background-color:#fff; height:1px; width:100%;">     
+	        	<p>${update.getDescription()}</p>         		
 	  		</c:forEach>
 		  </c:otherwise>
 		</c:choose>
-      
-     
-      
     </div>
     <div class="col-sm-4 well ">
-      <h3>Reddit</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <h3>Tumblr</h3>        
+      <c:choose>
+		  <c:when test="${tumblr == null}">
+		    See the results from tumblr for the searched keyword here.
+		  </c:when>	
+		  <c:otherwise>
+		     <c:forEach items="${tumblr}" var="update">  
+	      		<hr style=" border:none; border-top:1px dotted #f00; color:#fff; background-color:#fff; height:1px; width:100%;">     
+	        	<p>${update}</p>         		
+	  		</c:forEach>
+		  </c:otherwise>
+		</c:choose>
     </div>
   </div>
 </div>
