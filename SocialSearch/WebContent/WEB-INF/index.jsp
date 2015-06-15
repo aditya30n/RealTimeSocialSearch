@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <style>
+
+  </style>
 </head>
 <body>
 
@@ -30,7 +33,7 @@
 
     
   <div class="row">
-      <div class="col-sm-4 well ">
+      <div class="col-sm-4 well">
       <h3>Twitter</h3>
       <c:choose>
 		  <c:when test="${twitter == null}">
@@ -44,17 +47,16 @@
 		  </c:otherwise>
 		</c:choose>               
     </div>
-    <div class="col-sm-4 well">
-    <span class="social social-facebook"></span>
-      <h3>Facebook</h3>  
+    <div class="col-sm-4 well ">    
+      <h3>Reddit</h3>  
  		<c:choose>
-		  <c:when test="${facebook == null}">
-		    See the results from facebook for the searched keyword here.
+		  <c:when test="${reddit == null}">
+		    See the results from reddit for the searched keyword here.
 		  </c:when>	
 		  <c:otherwise>
-		     <c:forEach items="${facebook}" var="update">  
+		     <c:forEach items="${reddit}" var="update">  
 	      		<hr style=" border:none; border-top:1px dotted #f00; color:#fff; background-color:#fff; height:1px; width:100%;">     
-	        	<p>${update.getDescription()}</p>         		
+	        	<p>${update.getTitle()}</p>         		
 	  		</c:forEach>
 		  </c:otherwise>
 		</c:choose>

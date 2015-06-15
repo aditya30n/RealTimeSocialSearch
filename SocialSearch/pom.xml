@@ -76,7 +76,11 @@
   <artifactId>jumblr</artifactId>
   <version>0.0.11</version>
 </dependency>
-
+<dependency>
+        <groupId>com.github.jreddit</groupId>
+        <artifactId>jreddit</artifactId>
+        <version>1.0.3</version>
+</dependency>
     
        
   </dependencies>
